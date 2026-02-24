@@ -1,0 +1,10 @@
+%YAML 1.1
+---
+# Phase 3 (Pi on Wi‑Fi): expose follower USB serial over TCP.
+# IMPORTANT: no spaces after commas.
+connection: &follower
+  accepter: tcp,0.0.0.0,15000
+  connector: serialdev,/dev/follower,1000000n81,local
+  options:
+    kickolduser: true
+    max-connections: 1
